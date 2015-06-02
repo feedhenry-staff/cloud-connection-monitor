@@ -1,0 +1,32 @@
+{
+  "name": "cloud-connection-monitor",
+  "version": "1.0.0",
+  "description": "Monitors connectivity to (and availability of) a cloud instance.",
+  "main": "index.js",
+  "scripts": {
+    "bundle": "browserify -e ./index.js -s ConnectionMonitor -o ./dist/cm.js && npm run-script minify",
+    "minify": "uglifyjs ./dist/cm.js -o ./dist/cm.min.js -m -c --screw-ie8",
+    "lint": "jshint ./index.js",
+    "test": "mocha ./test"
+  },
+  "keywords": [
+    "fh",
+    "feedhenry",
+    "connection",
+    "connectivity",
+    "monitor"
+  ],
+  "author": "Evan Shortiss",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "10.2.3",
+    "chai": "^2.3.0",
+    "fh-mocks": "0.0.10",
+    "jshint": "2.7.0",
+    "mocha": "2.2.5",
+    "uglifyjs": "2.4.10"
+  },
+  "dependencies": {
+    "sinon": "^1.14.1"
+  }
+}
